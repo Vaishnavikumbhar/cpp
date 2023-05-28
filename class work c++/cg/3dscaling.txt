@@ -1,0 +1,27 @@
+// write the c program for  3d scalling 
+#include <stdio.h>
+#include <graphics.h>
+#include <dos.h>
+#include <math.h>
+int gd=DETECT,gm;
+int x1,y1,x2,y2,sx,sy;
+int main()
+{
+    printf("enter the coordinate ");
+    scanf("%d%d",&x1,&y2);
+    printf("enter the coordinate");
+    scanf("%d%d",&x2,&y2);
+    printf("enter the scalling factor");
+    scanf("%d%d",&sx,&sy);
+    initgraph(&gd,&gm,"c:\\tc\\bgi");
+    outtextxy(x2+35,y2,"before scalling");
+    bar3d(x1,y1,x2,y2,25,1);
+    x1=x1*sx;
+    y1=y1*sy;
+    x2=x2*sx;
+    y2=y2*sy;
+    outtextxy(x2,y2+35,"after scalling");
+    bar3d(x1,y1,x2,y2,25,1);
+    closegraph();
+    return 0;
+}

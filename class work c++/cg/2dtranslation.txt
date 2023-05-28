@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <graphics.h>
+int gd=DETECT ,gm;
+int n,xs[100],ys[100],i,ty,tx;
+void draw();
+void translate();
+void main()
+{
+    printf("enter the numbers of the sides of the polygon");
+    scanf("%d",&n);
+    printf("enter the coordinate of the x and y");
+    for(i=0;i<n;i++)
+    scanf("%d%d",&xs[i],&ys[i]);
+    printf("enter distances for translation");
+    scanf("%d%d",&tx,&ty);
+    initgraph(&gd,&gm,"c:\\tc\\bgi");
+    setcolor(RED);
+    draw();
+    translate();
+    setcolor(YELLOW);
+    draw();
+}
+void draw()
+{
+    for(i=0;i<n;i++)
+    
+        line(xs[i],ys[i],xs[(i+1)%n],ys[(i+1)%n]);
+    
+}
+void translate()
+{
+    for(i=0;i<n;i++)
+    
+        xs[i]=xs[i]+tx;
+        ys[i]=ys[i]+ty;
+    
+}

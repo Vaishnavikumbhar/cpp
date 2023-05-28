@@ -1,0 +1,29 @@
+//write the c program to implement the 3D translation 
+#include <stdio.h>
+#include <graphics.h>
+#include <dos.h>
+#include <math.h>
+int gd=DETECT,gm;
+int main(){
+//int gd,gm,i;
+int x1,y1,x2,y2,tx,ty;
+printf("enter the coordinate");
+scanf("%d%d",&x1,&x2);
+printf("enter the coordinate");
+scanf("%d%d",&x2,&y2);
+printf("enter the translation factor");
+scanf("%d%d",&tx,&ty);
+initgraph(&gd,&gm,"c:\\tc\\bgi");
+delay(1000);
+outtextxy(x2+35,y2,"Before translation");
+bar3d(x1,y1,x2,y2,25,1);
+x1=x1+tx;
+y1=y1+ty;
+x2=x2+tx;
+y2=y2+ty;
+outtextxy(x1,y2+35,"After translation");
+bar3d(x1,y1,x2,y2,25,1);
+
+closegraph();
+return 0;
+}
