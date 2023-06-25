@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 #include <string>
 using namespace std;
-string valid(char s)
+string valid(string s)
 {
     int n = s.length();
     string temp = " ";

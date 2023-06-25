@@ -31,10 +31,10 @@ bool s(string str)
 
 int main()
 {
-    string str = "The quick brown fox jumps over the lozy dog";
+    string str = "The quick brown fox jumps over the lazy dog";
     if(s(str)==true)
     {
-        cout<<"It is not panagram";
+        cout<<"It is panagram";
     }
     else if(s(str)==false)
     {
